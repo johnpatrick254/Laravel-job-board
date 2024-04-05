@@ -13,7 +13,6 @@
              <x-tag>{{ $job->category }}</x-tag>
          </div>
      </div>
-     <p class="text-sm mb-3">{!! nl2br(e($job->description)) !!}</p>
      <div>
           {{ $slot }}
      </div>
