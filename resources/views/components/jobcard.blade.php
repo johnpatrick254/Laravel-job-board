@@ -1,4 +1,4 @@
- <x-card class="mb-4">
+ <x-card class="mb-4 transition-all">
      <div class="flex justify-between mb-2">
          <h2 class="text-lg font-medium">{{ $job->title }}</h2>
          <div>${{ number_format($job->salary) }}</div>
@@ -9,11 +9,19 @@
              <div>{{ $job->location }}</div>
          </div>
          <div class="flex space-x-1 text-xs">
-             <x-tag>{{ Str::ucfirst($job->experience) }}</x-tag>
-             <x-tag>{{ $job->category }}</x-tag>
+             <x-tag>
+                 <a href="{{ route('jobs.index', ['experience' => $job->experience]) }}">
+                     {{ Str::ucfirst($job->experience) }}
+                 </a>
+             </x-tag>
+             <x-tag>
+                 <a href="{{ route('jobs.index', ['category' => $job->category]) }}">
+                     {{ $job->category }}
+                 </a>
+             </x-tag>
          </div>
      </div>
      <div>
-          {{ $slot }}
+         {{ $slot }}
      </div>
  </x-card>

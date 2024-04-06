@@ -902,8 +902,12 @@
         </style>
     </head>
 
-    <body class="font-sans antialiased dark:bg-slate-200 dark:text-gray-700 mx-auto mt-10 max-w-2xl">
-        {{ $slot }}
+    <body class="font-sans antialiased bg-gradient-to-r from-cyan-500 to-blue-500 dark:text-gray-700  mt-10">
+
+        <div class="max-w-[1023px] mx-auto">
+
+            {{ $slot }}
+        </div>
 
 
         <footer class="py-16 text-center text-sm text-black dark:text-white/70">

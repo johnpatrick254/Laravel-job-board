@@ -1,25 +1,40 @@
 <x-layout>
-    <x-breadcrums :links="['Jobs'=>route('jobs.index')]"/>
-    <x-card class="mb-4 text-sm">
-        <form action="{{route('jobs.index')}}" class="mb4 grid grid-cols-2 gap-4">
-            <div>
-                <div class="mb-1 font-semibold">Search</div>
-                <x-text-input name="Search" value="" placeholder="Search for ay text"/>
-            </div>
-            <div>
-                <div class="mb-1 font-semibold">Salary</div>
-                <div class="flex justify-between items-center space-x-2">
-                    <x-text-input name="From" value="" placeholder="From"/>
-                    <x-text-input name="To" value="" placeholder="To"/>
+    <x-breadcrums :links="['Jobs' => route('jobs.index')]" />
+    <x-card class="mb-4 text-sm" x-data="">
+        <form x-ref='filter' action="/jobs" method="GET" id=filter>
+            @csrf
+            <div action="/jobs" method="GET" class="mb4 grid grid-cols-2 gap-4">
+                <div>
+                    <div class="mb-1 font-semibold">Search</div>
+                    <x-text-input name='Search' :value="Request::get('Search')" placeholder='Search for ay text' formRef='filter' />
+                </div>
+                <div>
+                    <div class="mb-1 font-semibold">Salary</div>
+                    <div class="flex  items-center space-x-3 " >
+                        <x-text-input name="From"   :value="Request::get('From')" placeholder="From" formRef='filter' />
+                        <x-text-input name="To"   :value="Request::get('To')" placeholder="To" formRef='filter' />
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-1 font-semibold">Experience</div>
+                    <x-radio-group groupName="experience" :group="\App\Models\JobListing::$experienceLevels" />
+                </div>
+                <div>
+                    <div class="mb-1 font-semibold">Category</div>
+                    <x-radio-group groupName="category" :group="\App\Models\JobListing::$categories" />
                 </div>
             </div>
-          
-
+            <x-button type="submit" class="w-full">Filter</x-button>
         </form>
     </x-card>
-    @foreach ($jobs as $job)
-        <x-jobcard :job="$job" >
-            <x-link-button :href="route('jobs.show', $job)">Apply</x-link-button>
-        </x-jobcard>
-    @endforeach
+    @if (count($jobs))
+        @foreach ($jobs as $job)
+            <x-jobcard :job="$job">
+                <x-link-button :href="route('jobs.show', $job)">Apply</x-link-button>
+            </x-jobcard>
+        @endforeach
+    @else
+        <div class="w-full text-center text-slate-700">No jobs found</div>
+    @endif
+
 </x-layout>
