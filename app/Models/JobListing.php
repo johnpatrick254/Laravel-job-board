@@ -24,6 +24,10 @@ class JobListing extends Model
         'Marketing'
     ];
 
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
     public function scopeFilter(Builder | QueryBuilder $query, array $filters): Builder | QueryBuilder
     {
         return $query->when($filters['Search'] ?? null, function ($query) use ($filters) {
