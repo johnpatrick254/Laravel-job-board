@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(5000)->create();
-        $users = User::all()->take(100)->shuffle();
-        for ($x = 0; $x <= 100; $x++) {
+        User::factory(50)->create();
+        $users = User::all()->take(20)->shuffle();
+        for ($x = 0; $x < 20; $x++) {
             Employer::factory()->create([
                 'user_id' => $users->pop()->id
             ]);
@@ -26,12 +26,10 @@ class DatabaseSeeder extends Seeder
 
         $employers = Employer::all()->shuffle();
 
-        for ($x = 0; $x <= 700; $x++) {
+        for ($x = 0; $x < 50; $x++) {
             JobListing::factory()->create([
                 "employer_id" => $employers->random()->id
             ]);
         }
-
-        JobListing::factory(500)->create();
     }
 }
