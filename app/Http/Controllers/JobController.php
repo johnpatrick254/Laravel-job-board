@@ -13,8 +13,19 @@ class JobController extends Controller
     public function index()
     {
         //
-
-        return view('jobs.index',['jobs'=>JobListing::all()]);
+        $jobs = JobListing::query();
+        $jobs->when(request('Search'), function ($query) {
+            return $query->where('title', 'like', "%" . request('Search') . "%")->orWhere('description', 'like', "%" . request('Search') . "%");
+        })->when(request('From'), function ($query) {
+            return $query->where("salary", '>=', request('From'));
+        })->when(request('To'), function ($query) {
+            return $query->where('salary', '<=', request('To'));
+        })->when((request('experience') !== 'null' && request('experience') !== null), function ($query) {
+            return $query->where('experience', request('experience'));
+        })->when((request('category') !== 'null' && request('category') !== null), function ($query) {
+            return $query->where('category', request('category'));
+        });
+        return view('jobs.index', ['jobs' => $jobs->get()]);
     }
 
     /**
@@ -39,7 +50,7 @@ class JobController extends Controller
     public function show(JobListing $job)
     {
         //
-        return view('jobs.show',["job"=>$job]);
+        return view('jobs.show', ["job" => $job]);
     }
 
     /**
