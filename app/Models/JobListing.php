@@ -36,9 +36,9 @@ class JobListing extends Model
             return $query->where("salary", '>=', $filters['From']);
         })->when($filters['To'] ?? null, function ($query) use ($filters) {
             return $query->where('salary', '<=', $filters['To']);
-        })->when(($filters['experience']  !== 'null' && $filters['experience'] !== null), function ($query) use ($filters) {
+        })->when(isset($filters['experience']) ? ($filters['experience']  !== null && $filters['experience'] !== "null") : null, function ($query) use ($filters) {
             return $query->where('experience', $filters['experience']);
-        })->when(($filters['category'] !== 'null' && $filters['category'] !== null), function ($query) use ($filters) {
+        })->when(isset($filters['category']) ? ($filters['category'] !== 'null' && $filters['category'] !== null) : null, function ($query) use ($filters) {
             return $query->where('category', $filters['category']);
         });
     }
