@@ -30,11 +30,11 @@
     @if (count($jobs))
         @foreach ($jobs as $job)
             <x-jobcard :job="$job">
-                <x-link-button :href="route('jobs.show', $job)">Apply</x-link-button>
+                <x-link-button :href="route('jobs.show', $job)">View</x-link-button>
             </x-jobcard>
         @endforeach
     @else
-        <div class="w-full text-center text-slate-700">No jobs found</div>
+        <x-card class="text-center" >No jobs found</x-card>
     @endif
 
 </x-layout>
