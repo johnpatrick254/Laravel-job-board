@@ -28,6 +28,11 @@ class JobListing extends Model
     {
         return $this->belongsTo(Employer::class);
     }
+
+    public function jobApplications()
+    {
+        return $this->hasMany(JobApplication::class);
+    }
     public function scopeFilter(Builder | QueryBuilder $query, array $filters): Builder | QueryBuilder
     {
         return $query->when($filters['Search'] ?? null, function ($query) use ($filters) {
