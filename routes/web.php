@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
@@ -11,8 +12,9 @@ Route::get('logout', fn () => to_route('auth.destroy'))->name('logout');
 Route::delete('delete', [AuthController::class, 'destroy'])->name('auth.destroy');
 Route::apiResource('jobs', JobController::class);
 Route::apiResource('auth', AuthController::class)->only(['create', 'store']);
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     Route::apiResource('jobs.application', JobApplicationController::class)->only(['create', 'store']);
+    Route::apiResource('users.applications', ApplicationsController::class)->only(['create', 'destroy']);
 });
 
 require __DIR__ . '/auth.php';

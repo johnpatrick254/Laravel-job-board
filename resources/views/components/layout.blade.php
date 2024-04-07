@@ -904,34 +904,39 @@
 
     <body class="font-sans antialiased bg-gradient-to-r from-cyan-500 to-blue-500 dark:text-gray-700  mt-10">
         <div class="max-w-[1023px] mx-auto">
-            <nav class="mb-8 flex justify-between text-lg font-medium">
+            <nav class="mb-8 flex justify-between text-lg font-semibold">
                 <ul class="flex space-x-2">
                     <li>
                         <a href="{{ route('jobs.index') }}">Home</a>
                     </li>
                 </ul>
-                <ul class="flex space-x-2">
+                <ul class="flex space-x-2 ">
                     @auth
-                    <li>
-                        {{auth()->user()->name ?? 'Anonymus'}}
-                    </li>
-                    <li>
-                        <form action="{{route('auth.destroy')}}" method="POST">
-                        @csrf @method("delete")
-                        <button>logout</button>
-                        </form>
-                    </li>
-                        @else
+                        <div class="flex space-x-2">
+                            <li>
+                                {{ auth()->user()->name ?? '' }}
+                            </li>
+                            <li>
+                                <a href="{{ route('users.applications.create', auth()->user()->id) }}">Applications</a>
+                            </li>
+                        </div>
                         <li>
-                        <a href="{{ route('auth.create') }}">Sign In</a>
-                    </li>
-                        @endauth
+                            <form action="{{ route('auth.destroy') }}" method="POST">
+                                @csrf @method('delete')
+                                <button>Logout</button>
+                            </form>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ route('auth.create') }}">Sign In</a>
+                        </li>
+                    @endauth
                 </ul>
             </nav>
             @if (session('success'))
                 <div class="my-8  rounded-md border-l-4 border-green-300 bg-green-100 p-4 text-green-700 ">
                     <p class="font-bold">Success!</p>
-                    <p class="font-bold">{{session('success')}}</p>
+                    <p class="font-bold">{{ session('success') }}</p>
                 </div>
             @endif
             {{ $slot }}
