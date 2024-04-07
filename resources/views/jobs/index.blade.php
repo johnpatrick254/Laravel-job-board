@@ -1,5 +1,5 @@
 <x-layout>
-    <x-breadcrums :links="['Jobs' => route('jobs.index')]" />
+    {{-- <x-breadcrums :links="['Jobs' => route('jobs.index')]" /> --}}
     <x-card class="mb-4 text-sm" x-data="">
         <form x-ref='filter' action="/jobs" method="GET" id=filter>
             @csrf

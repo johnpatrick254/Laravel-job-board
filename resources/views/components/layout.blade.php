@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -903,15 +903,37 @@
     </head>
 
     <body class="font-sans antialiased bg-gradient-to-r from-cyan-500 to-blue-500 dark:text-gray-700  mt-10">
-
         <div class="max-w-[1023px] mx-auto">
-
+            <nav class="mb-8 flex justify-between text-lg font-medium">
+                <ul class="flex space-x-2">
+                    <li>
+                        <a href="{{ route('jobs.index') }}">Home</a>
+                    </li>
+                </ul>
+                <ul class="flex space-x-2">
+                    @auth
+                    <li>
+                        {{auth()->user()->name ?? 'Anonymus'}}
+                    </li>
+                    <li>
+                        <form action="{{route('auth.destroy')}}" method="POST">
+                        @csrf @method("delete")
+                        <button>logout</button>
+                        </form>
+                    </li>
+                        @else
+                        <li>
+                        <a href="{{ route('auth.create') }}">Sign In</a>
+                    </li>
+                        @endauth
+                </ul>
+            </nav>
             {{ $slot }}
         </div>
 
 
         <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-            Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+            Copyright John Patrick 2024©
         </footer>
         </div>
         </div>
