@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -46,5 +48,10 @@ class JobListing extends Model
         })->when(isset($filters['category']) ? ($filters['category'] !== 'null' && $filters['category'] !== null) : null, function ($query) use ($filters) {
             return $query->where('category', $filters['category']);
         });
+    }
+
+    public function hasUserApplied(Authenticatable |User |int $user)
+    {
+        return $this->where('id', $this->id)->whereHas('jobApplications', fn ($query) => $query->where('user_id', '=', $user->id ?? $user))->exists();
     }
 }

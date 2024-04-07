@@ -3,7 +3,8 @@
 
     <x-jobcard :job="$job">
         <p class="text-sm mb-3">{!! nl2br(e($job->description)) !!}</p>
-        <x-link-button :href="url()->previous()">Back</x-link-button>
+        <x-link-button :href="route('jobs.application.create',$job)">Apply</x-link-button>
+
     </x-jobcard>
     <x-card >
        <h2>Other jobs by {{$job->employer->company_name}}</h2>
