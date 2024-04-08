@@ -12,6 +12,7 @@ class JobApplication extends Model
         "user_id",
         "job_listing_id",
         "expected_salary",
+        "cv_path"
     ];
     public function user()
     {

@@ -1,5 +1,5 @@
  <nav>
-     <ul class="flex space-x-1 py-2">
+     <ul class="flex space-x-1 py-2 font-semibold">
          <li>
              <a href="http:/" target="_self" >Home</a>
          </li>

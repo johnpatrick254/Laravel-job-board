@@ -14,7 +14,7 @@ class JobApplicationController extends Controller
      */
     public function create(JobListing $job)
     {
-        
+
         return view('job_applications.create', ['job' => $job]);
     }
 
@@ -25,9 +25,12 @@ class JobApplicationController extends Controller
     {
         //
         Gate::authorize('apply', $job);
+        $validatedData = $request->validate(['expected_salary' => "required|min:1|max:100000", 'cv' => 'required|mimes:pdf|max:4048']);
+        $file = $request->file('cv')->store('cvs', 'private');
         $job->JobApplications()->create([
             "user_id" => $request->user()->id,
-            ...$request->validate(['expected_salary' => "required|min:1|max:100000"])
+            "expected_salary" => $validatedData['expected_salary'],
+            "cv_path" => $file
         ]);
 
         return redirect()->route('jobs.show', $job)->with('success', 'Application submitted successfully');

@@ -48,7 +48,6 @@ return [
             'driver'=>'local',
             'root' => storage_path('app/private'),
             'visibility' => 'public',
-            'throw' => false,
             ],
 
         's3' => [

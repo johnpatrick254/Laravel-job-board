@@ -903,7 +903,7 @@
     </head>
 
     <body class="font-sans antialiased bg-gradient-to-r from-cyan-500 to-blue-500 dark:text-gray-700  mt-10">
-        <div class="max-w-[1023px] mx-auto">
+        <div class="max-w-[1023px] px-[6%] mx-auto">
             <nav class="mb-8 flex justify-between text-lg font-semibold">
                 <ul class="flex space-x-2">
                     <li>
@@ -937,6 +937,12 @@
                 <div class="my-8  rounded-md border-l-4 border-green-300 bg-green-100 p-4 text-green-700 ">
                     <p class="font-bold">Success!</p>
                     <p class="font-bold">{{ session('success') }}</p>
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="my-8  rounded-md border-l-4 border-red-300 bg-red-100 p-4 red-green-700 ">
+                    <p class="font-bold">Error!</p>
+                    <p class="font-bold">{{ session('error') }}</p>
                 </div>
             @endif
             {{ $slot }}
