@@ -25,7 +25,14 @@ class JobListing extends Model
         'Sales',
         'Marketing'
     ];
-
+    public $fillable = [
+        'title',
+        'location',
+        'salary',
+        'description',
+        'experience',
+        'category',
+    ];
     public function employer()
     {
         return $this->belongsTo(Employer::class);

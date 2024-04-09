@@ -17,11 +17,11 @@
                 </div>
                 <div>
                     <div class="mb-1 font-semibold">Experience</div>
-                    <x-radio-group groupName="experience" :group="\App\Models\JobListing::$experienceLevels" />
+                    <x-radio-group groupName="experience" :all_option="false" :group="\App\Models\JobListing::$experienceLevels" />
                 </div>
                 <div>
                     <div class="mb-1 font-semibold">Category</div>
-                    <x-radio-group groupName="category" :group="\App\Models\JobListing::$categories" />
+                    <x-radio-group groupName="category" :all_option="false" :group="\App\Models\JobListing::$categories" />
                 </div>
             </div>
             <x-button type="submit" class="w-full">Filter</x-button>

@@ -1,7 +1,7 @@
 <x-layout>
     <x-card class=" text-slate-500">
         <h2 class="text-lg font-semibold mb-4 text-slate-500 text-center">Sign up</h2>
-        <form method="POST" action="{{ route('auth.store') }}">
+        <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <!-- Name -->
@@ -38,6 +38,17 @@
                     name="password_confirmation" required autocomplete="new-password" />
 
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
+            <div x-data="{ show: false }" class="mt-4 space-y-3 ">
+                <div class="flex space-x-2 items-center">
+                    <label for="checkbox">Register as Employer</label>
+                    <input type="checkbox" name="checkbox" id="checkbox" x-model="show">
+                </div>
+                <div x-show ="show" class="block items-center">
+                     <x-input-label for="company_name" :value="__('Company name')" />
+                    <x-text-input id="company_name" class="block mt-1 w-full" type="text" name="company_name"
+                        required />
+                </div>
             </div>
             <div class="w-full flex items-center justify-center mt-4">
                 <x-button type="submit"
