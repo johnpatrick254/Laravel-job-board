@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ApplicationsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,7 @@ Route::apiResource('auth', AuthController::class)->only(['create', 'store']);
 Route::middleware('auth')->group(function () {
     Route::apiResource('jobs.application', JobApplicationController::class)->only(['create', 'store']);
     Route::apiResource('users.applications', ApplicationsController::class)->only(['create', 'destroy']);
+    Route::apiResource('employers', EmployerController::class)->only(['create', 'store']);
 });
 
 require __DIR__ . '/auth.php';
