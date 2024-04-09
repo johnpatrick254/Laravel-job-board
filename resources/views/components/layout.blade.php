@@ -916,9 +916,18 @@
                             <li>
                                 {{ auth()->user()->name ?? '' }}
                             </li>
-                            <li>
+                            
+
+                            @if (auth()->user()->employer !== null)
+                                <li>
+                                    <a href="{{ route('myjobs.index') }}">Jobs</a>
+                                </li>
+                            @else
+                                <li>
                                 <a href="{{ route('users.applications.create', auth()->user()->id) }}">Applications</a>
                             </li>
+                            @endif
+
                         </div>
                         <li>
                             <form action="{{ route('auth.destroy') }}" method="POST">
