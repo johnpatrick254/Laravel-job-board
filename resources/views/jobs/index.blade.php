@@ -10,9 +10,9 @@
                 </div>
                 <div>
                     <div class="mb-1 font-semibold">Salary</div>
-                    <div class="flex  items-center space-x-3 " >
-                        <x-text-input name="From"   :value="Request::get('From')" placeholder="From" formRef='filter' />
-                        <x-text-input name="To"   :value="Request::get('To')" placeholder="To" formRef='filter' />
+                    <div class="flex  items-center space-x-3 ">
+                        <x-text-input name="From" :value="Request::get('From')" placeholder="From" formRef='filter' />
+                        <x-text-input name="To" :value="Request::get('To')" placeholder="To" formRef='filter' />
                     </div>
                 </div>
                 <div>
@@ -33,8 +33,9 @@
                 <x-link-button :href="route('jobs.show', $job)">View</x-link-button>
             </x-jobcard>
         @endforeach
+        {{ $jobs->links() }}
     @else
-        <x-card class="text-center" >No jobs found</x-card>
+        <x-card class="text-center">No jobs found</x-card>
     @endif
 
 </x-layout>

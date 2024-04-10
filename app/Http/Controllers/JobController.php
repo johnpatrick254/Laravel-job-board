@@ -20,7 +20,8 @@ class JobController extends Controller
             "category",
             'experience'
         );;
-        return view('jobs.index', ['jobs' => JobListing::with('employer')->filter($filters)->get()]);
+        $jobs= JobListing::with('employer')->filter($filters);
+        return view('jobs.index', ['jobs' => $jobs->paginate(10)]);
     }
 
     /**
