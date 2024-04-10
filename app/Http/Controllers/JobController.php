@@ -21,7 +21,7 @@ class JobController extends Controller
             'experience'
         );;
         $jobs= JobListing::with('employer')->filter($filters);
-        return view('jobs.index', ['jobs' => $jobs->paginate(10)]);
+        return view('jobs.index', ['jobs' => $jobs->paginate(7)]);
     }
 
     /**
