@@ -1,66 +1,184 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📗 Table of Contents
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+-   [📖 About the Project](#about-project)
+    -   [🛠 Built With](#built-with)
+        -   [Tech Stack](#tech-stack)
+        -   [Key Features](#key-features)
+    -   [🚀 Live Demo](#live-demo)
+-   [💻 Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Setup](#setup)
+    -   [Install](#install)
+    -   [Usage](#usage)
+    -   [Run tests](#run-tests)
+    -   [Deployment](#triangular_flag_on_post-deployment)
+-   [👥 Authors](#authors)
+-   [🔭 Future Features](#future-features)
+-   [🤝 Contributing](#contributing)
+-   [⭐️ Show your support](#support)
+-   [🙏 Acknowledgements](#acknowledgements)
+-   [❓ FAQ (OPTIONAL)](#faq)
+-   [📝 License](#license)
 
-## About Laravel
+<!-- PROJECT DESCRIPTION -->
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# 💼 Job Board <a name="about-project"></a>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Job Board** is A job board application that allows employers to list jobs and applicants to submit their CVs and receive email notifications.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠 Built With <a name="built-with"></a>
 
-## Learning Laravel
+-   **Laravel Breeze**
+-   **Laravel Blade**
+-   **PHP**
+-   **AlpineJS**
+-   **MySQL**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🖼️ Screenshots
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+ <img src="./public/build/assets/Screenshot 2024-05-27 124819.png" width="100%" height="500">
+ <br>
+ <img src="./public/build/assets/Screenshot 2024-05-27 130038.png" width="100%" height="500">
+ <br>
+ <img src="./public/build/assets/Screenshot 2024-05-27 125934.png" width="100%" height="500">
+ <br>
+ <img src="./public/build/assets/Screenshot 2024-05-27 125844.png" width="100%" height="500">
+ <br>
+ <img src="./public/build/assets/Screenshot 2024-05-27 125753.png" width="100%" height="500">
+ <br>
+  <br>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Key Features <a name="key-features"></a>
 
-## Laravel Sponsors
+-   **Create Jobs**
+-   **Apply to jobs**
+-   **Filter jobs by experience or field**
+-   **Register as company**
+-   **Save jobs**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Premium Partners
+<!-- LIVE DEMO -->
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🚀 Live Demo <a name="[live-demo](#)"></a>
 
-## Contributing
+-   [Live Demo](<[https://job-board-2evd.onrender.com/](#)>)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 💻 Getting Started <a name="getting-started"></a>
 
-## Code of Conduct
+### Prerequisites
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+In order to run this project, you need:
 
-## Security Vulnerabilities
+-   Visual Studio Code
+-   Node.js
+-   Docker
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Setup
 
-## License
+Clone this repository to your desired folder:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```sh
+cd <desired folder to contain project>
+git clone https://github.com/johnpatrick254/Laravel-job-board
+cd <project_folder>
+```
+
+### Install
+
+Install project dependencies:
+
+```sh
+composer install
+```
+
+### Usage
+
+Run migrations:
+
+```sh
+php artisan migrate --seed
+```
+
+Start development server:
+
+```sh
+php artisan serve
+```
+
+<!-- Add any additional instructions here, such as setting up Firebase credentials, etc. -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **JOHN PATRICK**
+
+-   GitHub: [@johnpatrick254](https://github.com/johnpatrick254)
+-   Bitbucket: [@johnpat1](https://bitbucket.org/johnpat1/workspace/overview/)
+-   Twitter: [@jpattrick538](https://twitter.com/jpattrick538_)
+-   LinkedIn: [john-patrick-254-ke](https://www.linkedin.com/in/john-patrick-254ke/)
+
+<!-- Add additional authors as needed -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+-   **AI Support**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you found this project useful, please consider giving it a star on GitHub!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+<!-- > Give credit to everyone who inspired your codebase. -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+<!-- ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+
+<!-- > Add at least 2 questions new developers would ask when they decide to use your project. -->
+
+<!-- - **[Question_1]**
+
+  - [Answer_1]
+
+- **[Question_2]**
+
+  - [Answer_2]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```
